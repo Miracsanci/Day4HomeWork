@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol ! </title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+<body id="ana">
+    <style>
+        #ana{
+            background: #009FFF;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        a{
+            border: 2px solid blue;
+            border-radius: 15px ;
+            text-decoration: none;
+            background-color: rgb(255, 211, 195);
+            color: rgb(238, 142, 9);
+            font-weight: bold;
+            font-size: 20px;
+            vertical-align: center;
+            }
+        a:hover{
+                background-color: blanchedalmond;
+            }
+        #orta {
+                margin:0 auto 0 auto;
+                width: 380px;
+                border: 10px solid white;
+                background-color: aquamarine;
+                border-radius: 30px 0px;
+                text-align: center;
+            }
+        .text-2{
+                margin-top: 15%;
+                text-align: center;
+            }
+        .but{
+                border: 5px solid  black;
+                border-radius: 20px;
+                background-color: black;
+                color: white;
+            }
+        .but:hover{
+                border: 5px solid  black;
+                border-radius: 20px;
+                background-color: white;
+                color: black;
+            }
+        #isim{
+                border: 5px solid black;
+               
+            }
+        #isim:hover{
+                border: 5px solid purple;
+                background-color: grey;
+                border-radius: 15px;
+            }
+        #parola{
+                border: 5px solid black;
+          
+            }
+        #parola:hover{
+                border: 5px solid purple;
+                background-color: grey;
+                border-radius: 20px;
+        }
+        #menu{
+            text-align: center;
+        }
+    </style>
+    <h1 style="text-align:center ;"> Türkiyenin İlleri </h1>
+    <div id="menu" >
+        <a href="index.html">Anasayfa</a>
+        <a href="adana.html">Adana</a>
+        <a href="erzurum.html">Erzurum</a>
+        <a href="adiyaman.html">Adıyaman</a>
+        <a href="form.html">Kayıt Ol</a><br><br>
+        </div>
+    <div id="orta">
+        <img src="/user.png" alt="" weight="100px" height="100px">
+        <h4>Kullanıcı Adı :</h4><input type="text" id="isim"><br>
+        <h4>Şifre :</h4><input type="password" id="parola"> <br><br>
+        <button class="but" type="button" onclick="kaydet()">Kayıt ol </button>
+        <button class="but" type="button" onclick="kontrol()"> Giris yap</button>
+    </div>
+    <script>
+       function kontrol(){
+        if(localStorage.getItem('parola')==document.getElementById("parola").value &&
+        localStorage.getItem('isim')==document.getElementById("isim").value ){
+            alert("Giriş başarılı");
+        }
+        else {
+            alert("Giris basarısız");
+        }
+        }
+        function kaydet(){
+            var isim = document.getElementById("isim").value;
+            var parola = document.getElementById("parola").value;
+            localStorage.setItem('isim', isim);
+            localStorage.setItem('parola', parola);
+        }
+    </script>
+
+</button>
+<footer>
+    <p class="text-2">Miraç Sancı Tarafından Düzenlenmiştir | &copy; Olmayan Her Hakkı Saklıdır :) 2022 
+    </p> 
+</footer>
+</body>
+</html>
